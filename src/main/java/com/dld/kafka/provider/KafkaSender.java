@@ -33,6 +33,7 @@ public class KafkaSender {
             message.setMsg("hell word ！");
             message.setSendTime(new Date());
             System.out.println("创建+++++++++++++++++++++"+message);
+            //每条发布到Kafka集群的消息都有一个类别，这个类别被称为Topic
             kafkaTemplate.send("dld",message.toString());
     }
 }
