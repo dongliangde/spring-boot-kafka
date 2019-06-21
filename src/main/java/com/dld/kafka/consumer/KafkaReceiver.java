@@ -20,7 +20,7 @@ import java.util.Optional;
 @Slf4j
 public class KafkaReceiver {
 
-    @KafkaListener(topics = {"dld"})
+    @KafkaListener(topics = {"dld"})//每条发布到Kafka集群的消息都有一个类别，参数可以多个为数组
     public void listen(ConsumerRecord<?, ?> record) {
         Optional<?> kafkaMessage = Optional.ofNullable(record.value());
         if (kafkaMessage.isPresent()) {
